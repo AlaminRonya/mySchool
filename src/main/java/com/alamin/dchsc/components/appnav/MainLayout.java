@@ -1,6 +1,7 @@
 package com.alamin.dchsc.components.appnav;
 
 import com.alamin.dchsc.components.appnav.view.HomeView;
+import com.alamin.dchsc.components.appnav.view.RegistrationForm;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.H1;
@@ -29,6 +30,9 @@ public class MainLayout extends AppLayout {
     private VerticalLayout getTabs() {
         final RouterLink listLink = new RouterLink("Home", HomeView.class);
         listLink.setHighlightCondition(HighlightConditions.sameLocation());
-        return new VerticalLayout(listLink);
+        return new VerticalLayout(
+                listLink,
+                new RouterLink("Admission", RegistrationForm.class)
+        );
     }
 }
